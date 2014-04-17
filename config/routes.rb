@@ -1,4 +1,6 @@
 Catpic::Application.routes.draw do
+  resources :posts
+
   resources :pics
 
   resources :users
