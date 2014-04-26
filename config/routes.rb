@@ -7,6 +7,10 @@ Catpic::Application.routes.draw do
 
   resources :cats
 
+  resources :sessions, only: [:new, :create]
+  get 'signin', to: 'sessions#new'
+  get 'signup', to: 'users#new'
+  delete 'signout', to: 'sessions#destroy'
 
   root 'users#index'
 

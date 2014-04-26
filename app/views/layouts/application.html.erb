@@ -11,10 +11,18 @@
 
 
 <div class="navibar">
-  <%= link_to 'cats', cats_path %>
-  <%= link_to 'users', users_path %>
-  <%= link_to 'posts', posts_path %>
-  <%= link_to 'pics', pics_path %>
+    <%= link_to 'cats', cats_path %>
+    <%= link_to 'users', users_path %>
+    <%= link_to 'posts', posts_path %>
+    <%= link_to 'pics', pics_path %>
+    |
+    <% if not current_user.nil? %>
+        <%= link_to current_user.name, current_user %>
+        <%= link_to 'signout', signout_path, method: :delete %>
+    <% else %>
+        <%= link_to 'signin', signin_path %>
+        <%= link_to 'signup', signup_path %>
+    <% end %>
 </div>
 
 <%= yield %>
