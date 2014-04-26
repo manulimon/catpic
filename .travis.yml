@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.0.0
+script:
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: RC2oYSKo1ukjFMRpD80+H7dRLqgBvsPVNrsvcMMt/nUHK+pKD2z+brnS2kvz80JRguI6M+OLtTNkf11suC6AcNITINXGAjgg+U/csUQbiB7BXx+fjeHwOwBB+tSW+IcH5uCpR2KZZuVOQdPS5Wv0GEgW+/iUnV1LVNxko2S202s=
+  app: catpic
+  on:
+    repo: manulimon/catpic
+  run: "rake db:migrate"
