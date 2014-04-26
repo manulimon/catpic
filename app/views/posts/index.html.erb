@@ -5,8 +5,6 @@
     <tr>
       <th>User</th>
       <th>Pic</th>
-      <th>Create date</th>
-      <th>Edit date</th>
       <th>Text</th>
       <th></th>
       <th></th>
@@ -19,8 +17,6 @@
       <tr>
         <td><%= post.user_id %></td>
         <td><%= post.pic_id %></td>
-        <td><%= post.create_date %></td>
-        <td><%= post.edit_date %></td>
         <td><%= post.text %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>

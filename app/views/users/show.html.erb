@@ -25,5 +25,23 @@
 </p>
 
 
+<p>
+  <% if @user.pics.exists? %>
+      <strong>Pics:</strong>
+      <% @user.pics.each do |pic| %>
+          <%= link_to pic, pic %>
+      <% end %>
+  <% end %>
+</p>
+
+<p>
+  <% if @user.posts.exists? %>
+      <strong>Posts:</strong>
+      <% @user.posts.each do |post| %>
+          <%= link_to post, post %>
+      <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
