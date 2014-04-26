@@ -15,5 +15,15 @@
   <%= @user.desc %>
 </p>
 
+<p>
+  <% if @user.cats.exists? %>
+      <strong>Cats:</strong>
+      <% @user.cats.each do |cat| %>
+          <%= link_to cat, cat %>
+      <% end %>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
