@@ -30,5 +30,9 @@
   <%= @cat.coat %>
 </p>
 
-<%= link_to 'Edit', edit_cat_path(@cat) %> |
+
+<% if @cat.user == current_user %>
+    <%= link_to 'Edit', edit_cat_path(@cat) %> |
+    <%= link_to 'Remove cat', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <%= link_to 'Back', cats_path %>

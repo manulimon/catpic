@@ -1,5 +1,6 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_that_signed_in, except: [:index, :show]
 
   # GET /cats
   # GET /cats.json

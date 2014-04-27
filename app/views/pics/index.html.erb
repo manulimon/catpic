@@ -3,35 +3,26 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Url</th>
       <th>Header</th>
       <th>Date</th>
       <th>Desc</th>
       <th>Exif</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pics.each do |pic| %>
       <tr>
-        <td><%= pic.user_id %></td>
-        <td><%= pic.url %></td>
-        <td><%= pic.header %></td>
+        <td><%= link_to pic.header, pic %></td>
         <td><%= pic.date %></td>
         <td><%= pic.desc %></td>
         <td><%= pic.exif %></td>
-        <td><%= link_to 'Show', pic %></td>
-        <td><%= link_to 'Edit', edit_pic_path(pic) %></td>
-        <td><%= link_to 'Destroy', pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
 
 <%= link_to 'New Pic', new_pic_path %>
