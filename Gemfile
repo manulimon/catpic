@@ -18,6 +18,12 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
+
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use Uglifier as compressor for JavaScript assets

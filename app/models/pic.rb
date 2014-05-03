@@ -3,7 +3,6 @@ class Pic < ActiveRecord::Base
   validates :url, presence: true
   validates :user_id, presence: true
 
-
   def to_s
     "#{header}"
   end
