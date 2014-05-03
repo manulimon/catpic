@@ -1,31 +1,15 @@
 <h1>Posts</h1>
+<% @posts.each do |post| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Pic</th>
-      <th>Text</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="row">
+    <div class="col-md-6">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.user %></td>
-        <td><%= post.pic_id %></td>
-        <td><%= post.text %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+        <img src="<%= post.pics[0].url %>" alt="..." class="img-thumbnail">
+    </div>
+    <div class="col-md-6">
+       <%= post.title%> by <%= post.user %> <br>
+       <%= post.text %>
+    </div>
+</div>
+<% end %>
 <%= link_to 'New Post', new_post_path %>

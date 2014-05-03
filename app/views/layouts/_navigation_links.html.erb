@@ -6,6 +6,7 @@
 <li><%= link_to 'Posts', posts_path %></li>
 <li><%= link_to 'Users', users_path %></li>
 <% if not current_user.nil? %>
+    <li><%= link_to 'Add pic', newpic_path %></li>
     <li><%= link_to current_user.name, current_user %></li>
     <li><%= link_to 'signout', signout_path, method: :delete %></li>
 <% else %>

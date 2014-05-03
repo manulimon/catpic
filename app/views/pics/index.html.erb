@@ -1,28 +1,29 @@
-<h1>Listing pics</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Header</th>
-      <th>Date</th>
-      <th>Desc</th>
-      <th>Exif</th>
-    </tr>
-  </thead>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-  <tbody>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
     <% @pics.each do |pic| %>
-      <tr>
-        <td><%= link_to pic.header, pic %></td>
-        <td><%= pic.date %></td>
-        <td><%= pic.desc %></td>
-        <td><%= pic.exif %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="item active">
+     <img src="<%= pic.url %>" alt="...">
+      <div class="carousel-caption">
+        <% pic.desc %>
+      </div>
+    </div>
+      <% end %>
+      </div>
 
-<br>
-
-
-<%= link_to 'New Pic', new_pic_path %>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
