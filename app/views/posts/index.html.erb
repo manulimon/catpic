@@ -7,9 +7,8 @@
         <img src="<%= post.pics[0].url %>" alt="..." class="img-thumbnail">
     </div>
     <div class="col-md-6">
-       <%= post.title%> by <%= post.user %> <br>
+      <%= link_to post.title, post %> by <%= post.user %> <br>
        <%= post.text %>
     </div>
 </div>
 <% end %>
-<%= link_to 'New Post', new_post_path %>

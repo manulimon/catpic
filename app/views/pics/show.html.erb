@@ -5,33 +5,20 @@
   <img src="<%= @pic.url %>">
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @pic.user %>
-</p>
+
 
 <p>
-  <strong>Header:</strong>
-  <%= @pic.header %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @pic.date %>
-
-<p>
-  <strong>Desc:</strong>
+  <strong>
+    <%= @pic.header %>
+  </strong> by
+  <%= @pic.user %> <br>
+  <strong>Description:</strong>
   <%= @pic.desc %>
 </p>
 
-<p>
-  <strong>Exif:</strong>
-  <%= @pic.exif %>
-</p>
 <% unless !current_user %>
     <% if @pic.user_id == current_user.id %>
-        <%= link_to 'Edit', edit_pic_path(@pic) %> |
-        <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_pic_path(@pic), class:"btn btn-primary"  %>
+        <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %>
     <% end %>
 <% end %>
-    <%= link_to 'Back', pics_path %>

@@ -32,10 +32,7 @@
 
 <% unless !current_user %>
     <% if @cat.user == current_user %>
-        <%= link_to 'Edit', edit_cat_path(@cat) %> |
-        <%= link_to 'Remove cat', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_cat_path(@cat), class:"btn btn-primary" %>
+        <%= link_to 'Remove cat', @cat, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %>
     <% end %>
 <% end %>
-
-
-<%= link_to 'Back', cats_path %>

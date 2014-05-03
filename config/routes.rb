@@ -10,11 +10,10 @@ Catpic::Application.routes.draw do
   resources :sessions, only: [:new, :create]
   get 'signin', to: 'sessions#new'
   get 'signup', to: 'users#new'
-  get 'newpic', to: 'pics#new'
 
   delete 'signout', to: 'sessions#destroy'
 
-  root 'users#index'
+  root 'pics#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
