@@ -28,9 +28,10 @@
   <strong>Exif:</strong>
   <%= @pic.exif %>
 </p>
-
-<% if @pic.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_pic_path(@pic) %> |
-    <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% unless !current_user %>
+    <% if @pic.user_id == current_user.id %>
+        <%= link_to 'Edit', edit_pic_path(@pic) %> |
+        <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 <% end %>
-<%= link_to 'Back', pics_path %>
+    <%= link_to 'Back', pics_path %>

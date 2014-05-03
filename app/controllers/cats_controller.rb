@@ -26,7 +26,7 @@ class CatsController < ApplicationController
   # POST /cats.json
   def create
     @cat = Cat.new(cat_params)
-
+    @cat.user = current_user
     respond_to do |format|
       if @cat.save
         format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
@@ -70,6 +70,6 @@ class CatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_params
-      params.require(:cat).permit(:name, :age, :race, :gender, :color, :coat)
+      params.require(:cat).permit(:name, :age, :race, :gender, :color, :coat, :user_id)
     end
 end
