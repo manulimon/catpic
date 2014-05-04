@@ -9,4 +9,8 @@ FactoryGirl.define do
     url "http"
   end
 
+  factory :cat do
+    name "mau"
+  end
+
 end

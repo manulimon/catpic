@@ -16,6 +16,7 @@ Travis: [![Build Status](https://travis-ci.org/manulimon/catpic.png)](https://tr
 ## Testaus
 
 rspec-testit testaavat että modelien luonti onnistuu/epäonnistuu ilman olennaisia parametreja.
+Sivuilla on myös muutama capybaratesti websivujen toiminnoille.
 
 ## Muuta
 
