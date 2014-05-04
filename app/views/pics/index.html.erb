@@ -1,23 +1,21 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <% @pics.each_with_index do |pic, index|%>
+    <li data-target="#carousel-example-generic" data-slide-to="<% index %>"></li>
+    <% end %>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <% @pics.each do |pic| %>
-  <div class="<% if pic.equal?(@pics.first);%> active <% end %> item" style="background-size: cover; background-position: center center; background-image: url(<%= pic.url %>);height: 600px">
-      <div class="carousel-caption">
-        <h3><%= link_to pic.header, pic %></h3>
-
-      </div>
-    </div>
+        <div class="<% if pic.equal?(@pics.first);%> active <% end %> item" style="background-size: cover; background-position: center center; background-image: url(<%= pic.url %>);height: 600px">
+            <div class="carousel-caption">
+                <h3><%= link_to pic.header, pic %></h3>
+          </div>
+        </div>
       <% end %>
-      </div>
+  </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
