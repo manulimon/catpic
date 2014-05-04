@@ -7,4 +7,11 @@ describe Post do
     expect(post.valid?).to be(false)
     expect(Post.count).to eq(0)
   end
+
+    it "it cannot be created without pic" do
+      post = Post.new user_id:1, title:"kissa"
+
+      expect(post.valid?).to be(false)
+      expect(Post.count).to eq(0)
+    end
 end
