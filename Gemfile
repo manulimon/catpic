@@ -10,10 +10,16 @@ gem 'sass-rails', '~> 4.0.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.14.1'
+end
+
+group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'launchy'
 end
+
+
 
 group :production do
   gem 'pg'
