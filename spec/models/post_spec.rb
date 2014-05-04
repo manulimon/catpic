@@ -20,4 +20,6 @@ describe Post do
 
     post.to_s.should == "bot"
   end
+
+
 end

@@ -7,8 +7,8 @@ describe Cat do
     cat.name.should == "Joni"
   end
 
-  it "cannot be created without user" do
-    cat = Cat.create name:"Joni"
+  it "cannot be created name" do
+    cat = Cat.create
 
     expect(cat).not_to be_valid
     expect(Cat.count).to eq(0)
