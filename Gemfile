@@ -11,6 +11,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.14.1'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'simplecov', require: false
 end
 
 group :production do

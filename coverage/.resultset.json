@@ -1,0 +1,60 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/riena/Documents/ror/catpic/app/models/cat.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/riena/Documents/ror/catpic/app/models/pic.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/riena/Documents/ror/catpic/app/models/post.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/riena/Documents/ror/catpic/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1399205334
+  }
+}
