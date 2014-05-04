@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   has_many :pics, through: :user
 
   validates :title, presence: true
-  ##validates :pic_id, presence: true
+  validates :pic_id, presence: true
 
   def to_s
     "#{title}"

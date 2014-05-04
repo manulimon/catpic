@@ -13,7 +13,7 @@
 
     <div class="field">
       <%= f.label :pic_id %><br>
-      <%= f.select :pic_id, options_from_collection_for_select(@pics, :id, :header) %>
+      <%= f.select :pic_id, options_from_collection_for_select(@pics, :id, :header, selected: @post.pic_id) %>
     </div>
     <div class="field">
       <%= f.label :title %><br>

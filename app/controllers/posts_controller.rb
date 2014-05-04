@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :ensure_that_signed_in, except: [:index, :show]
+  before_action :has_pics, only: [:new, :create]
 
   # GET /posts
   # GET /posts.json
@@ -73,6 +74,10 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :pic_id, :create_date, :edit_date, :text, :title)
+      params.require(:post).permit(:user_id, :pic_id, :text, :title)
+    end
+
+    def has_pics
+      redirect_to new_pic_path, notice:'add pics before making a post' if !current_user.pics.any?
     end
 end
