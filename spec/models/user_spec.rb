@@ -20,11 +20,16 @@ describe User do
     user.to_s.should == "bot"
   end
 
-  it "creates user with proper attributes" do
-    user = User.create name:"bot", password:"123", password_confirmation:"123"
+  describe "with proper password" do
+    let(:user){ FactoryGirl.create(:user) }
 
-    expect(user.valid?).to be(true)
-    expect(User.count).to eq(1)
+    it "user is valid" do
+
+      expect(user.valid?).to be(true)
+      expect(User.count).to eq(1)
+    end
+
   end
+
 
 end

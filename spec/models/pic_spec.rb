@@ -19,4 +19,13 @@ describe Pic do
 
     pic.to_s.should == "cute"
   end
+
+  it "is created with user, header and url" do
+    user = FactoryGirl.create(:user)
+
+    pic = Pic.create header:"cute", url:"http", user:user
+
+    expect(pic.valid?).to be(true)
+    expect(Pic.count).to eq(1)
+  end
 end

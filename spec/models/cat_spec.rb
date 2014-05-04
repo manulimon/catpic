@@ -28,4 +28,15 @@ describe Cat do
 
     cat.to_s.should == "bot"
   end
+
+  it "is created with user and a name" do
+    user = FactoryGirl.create(:user)
+
+    cat = Cat.create name:"mau", user:user
+
+    expect(cat.valid?).to be(true)
+    expect(Cat.count).to eq(1)
+  end
+
+
 end
