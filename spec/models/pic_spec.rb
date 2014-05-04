@@ -14,4 +14,9 @@ describe Pic do
     expect(Pic.count).to eq(0)
   end
 
+  it "has to_s set correctly" do
+    pic = Pic.new header:"cute"
+
+    pic.to_s.should == "cute"
+  end
 end

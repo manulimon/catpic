@@ -22,4 +22,10 @@ describe Cat do
     expect(cat).not_to be_valid
     expect(Cat.count).to eq(0)
   end
+
+  it "has to_s set correctly" do
+    cat = Cat.new name:"bot"
+
+    cat.to_s.should == "bot"
+  end
 end

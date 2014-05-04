@@ -14,4 +14,10 @@ describe Post do
       expect(post.valid?).to be(false)
       expect(Post.count).to eq(0)
     end
+
+  it "has to_s set correctly" do
+    post = Post.new title:"bot"
+
+    post.to_s.should == "bot"
+  end
 end
