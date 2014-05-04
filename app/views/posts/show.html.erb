@@ -1,23 +1,17 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
+<div class="row">
+  <div class="col-md-9">
 
-<p>
-  <strong>Pic:</strong>
-  <%= @post.pic_id %>
-</p>
+    <h1><%= @post.title %></h1> by <%= link_to @post.user, @post.user %>
 
-<p>
-  <strong><%= @post.title %></strong>
-</p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="col-md-3">
+    <img src="<%= @pics.find(@post.pic_id).url %>" alt="..." class="img-responsive img-thumbnail">
+  </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
+</div>
+
 
 <% unless !current_user %>
     <% if @post.user_id == current_user.id %>

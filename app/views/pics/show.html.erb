@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-9">
+      <img class="img-responsive" src="<%= @pic.url %>">
+  </div>
+  <div class="col-md-3">
+    <strong>
+      <%= @pic.header %>
+    </strong> by
+    <%= @pic.user %> <br>
+    <strong>Description:</strong>
+    <%= @pic.desc %>
 
-
-<p>
-  <img src="<%= @pic.url %>">
-</p>
-
-
-
-<p>
-  <strong>
-    <%= @pic.header %>
-  </strong> by
-  <%= @pic.user %> <br>
-  <strong>Description:</strong>
-  <%= @pic.desc %>
-</p>
-
-<% unless !current_user %>
-    <% if @pic.user_id == current_user.id %>
-        <%= link_to 'Edit', edit_pic_path(@pic), class:"btn btn-primary"  %>
-        <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %>
+    <div class="form-group">
+    <% unless !current_user %>
+        <% if @pic.user_id == current_user.id %>
+            <%= link_to 'Edit', edit_pic_path(@pic), class:"btn btn-primary"  %>
+            <%= link_to 'Remove pic', @cat, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %>
+        <% end %>
     <% end %>
-<% end %>
+    </div>
+  </div>
+
+</div>

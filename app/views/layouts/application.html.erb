@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "Catpic" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Catpic" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -13,7 +14,6 @@
       <%= render 'layouts/navigation' %>
     </header>
     <div class="container" role="main">
-      <br><br> <!-- TODO -->
        <%= render 'layouts/messages' %>
        <%= yield %>
     </div>
